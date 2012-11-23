@@ -1,0 +1,3 @@
+name = uOttawa Fields
+description = Creates all fields used by uOttawa content types.
+core = 7.x

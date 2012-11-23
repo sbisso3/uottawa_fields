@@ -1,0 +1,489 @@
+<?php
+/**
+ * @file
+ * Creates all fields used by uOttawa content types.
+ */
+
+/**
+ * Implements of hook_enable().
+ */
+function uottawa_fields_enable() {
+  
+  $fields = array(
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_content_category',
+        'type' => 'taxonomy_term_reference',  
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_content_category',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Content Category'),
+        'widget' => array(
+          'type' => 'options_buttons',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_tags',
+        'type' => 'taxonomy_term_reference', 
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_tags',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Tags'),
+        'widget' => array(
+          'type' => 'taxonomy_autocomplete',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+  
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_primary_image',
+        'type' => 'image',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_primary_image',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Primary Image'),
+        'widget' => array(
+          'type' => 'image_image',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_image_alt',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_image_alt',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Image Alt Text'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_summary',
+        'type' => 'text_long',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_summary',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Summary'),
+        'widget' => array(
+          'type' => 'text_textarea',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+     
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_supplement_type',
+        'type' => 'taxonomy_term_reference',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_supplement_type',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Summary'),
+        'widget' => array(
+          'type' => 'options_select',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_bio_profile_id',
+        'type' => 'entityreference',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_bio_profile_id',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Profile Reference'),
+        'widget' => array(
+          'type' => 'node_reference_autocomplete',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_department',
+        'type' => 'taxonomy_term_reference',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_department',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Department'),
+        'widget' => array(
+          'type' => 'options_select',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_year',
+        'type' => 'date',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_year',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Year'),
+        'widget' => array(
+          'type' => 'date_popup',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_link',
+        'type' => 'link_field',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_link',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Link'),
+        'widget' => array(
+          'type' => 'link_field',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),   
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_date_range',
+        'type' => 'date',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_link',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Date Range'),
+        'widget' => array(
+          'type' => 'date_popup',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ), 
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_credit',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_credit',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Credit'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_biographical_article_type',
+        'type' => 'taxonomy_term_reference',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_biographical_article_type',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Biographical Article Type'),
+        'widget' => array(
+          'type' => 'options_select',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_first_name',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_first_name',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('First Name'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_last_name',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_last_name',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Last Name'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_academic_title',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_academic_title',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Academic title'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_job_title',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_job_title',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Job title'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_room_number',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_room_number',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Room Number'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_phone_number',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_phone_number',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Phone Number'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_extension',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_extension',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Extension'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_email_address',
+        'type' => 'text',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_email_address',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Email address'),
+        'widget' => array(
+          'type' => 'text_textfield',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_person_type',
+        'type' => 'taxonomy_term_reference',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_person_type',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Person Type'),
+        'widget' => array(
+          'type' => 'options_select',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_display_type',
+        'type' => 'taxonomy_term_reference',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_display_type',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Display Type'),
+        'widget' => array(
+          'type' => 'options_select',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_media_asset',
+        'type' => 'file',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_media_asset',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Media Asset'),
+        'widget' => array(
+          'type' => 'file_generic',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_release_date',
+        'type' => 'date',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_release_date',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Release Date'),
+        'widget' => array(
+          'type' => 'date_popup',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+      
+    (object)array(
+      'field' => array (
+        'field_name' => 'uottawa_program_type',
+        'type' => 'taxonomy_term_reference',
+      ),
+      'instance' => array (
+        'field_name' => 'uottawa_program_type',
+        'entity_type' => 'node',
+        'bundle' => 'uottawasacrificialcontenttype',
+        'label' => t('Program Type'),
+        'widget' => array(
+          'type' => 'options_select',
+          'weight' => 0,
+          'settings' => array('size' => 50),
+        ) 
+      )
+    ),
+  
+  );
+    
+  foreach ($fields as $field) {
+    if (!field_info_field($field->field['field_name'])) {
+      field_create_field($field->field);
+      field_create_instance($field->instance);
+    }
+  }
+}
